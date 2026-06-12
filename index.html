@@ -1,0 +1,613 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#F5F5F0;color:#111}
+.site{max-width:860px;margin:0 auto;background:#fff}
+
+/* NAV */
+.nav{background:#0A2540;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{color:#fff;font-size:15px;font-weight:700;letter-spacing:.04em}
+.nav-links{display:flex;gap:20px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.75);font-size:13px;text-decoration:none;cursor:pointer}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:#0D7A5F;color:#fff!important;padding:7px 16px;border-radius:6px;font-size:13px;font-weight:600}
+
+/* HERO */
+.hero{background:#0A2540;padding:64px 32px;display:grid;grid-template-columns:1fr 200px;gap:40px;align-items:center}
+.hero-name{color:rgba(255,255,255,.45);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+.hero-headline{color:#fff;font-size:28px;font-weight:700;line-height:1.35;margin-bottom:16px}
+.hero-sub{color:rgba(255,255,255,.6);font-size:14px;margin-bottom:28px}
+.force-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.pill{padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.9)}
+.pill-p{background:rgba(74,58,140,.4);border-color:rgba(74,58,140,.6)}
+.pill-t{background:rgba(13,122,95,.4);border-color:rgba(13,122,95,.6)}
+.pill-o{background:rgba(192,90,26,.4);border-color:rgba(192,90,26,.6)}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:#0D7A5F;color:#fff;padding:10px 20px;border-radius:7px;font-size:13px;font-weight:600;border:none;cursor:pointer}
+.btn-wa{background:#25D366;color:#fff;padding:10px 20px;border-radius:7px;font-size:13px;font-weight:600;border:none;cursor:pointer}
+.hero-photo{width:180px;height:220px;background:rgba(255,255,255,.08);border-radius:12px;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:12px;text-align:center;padding:12px}
+
+/* LOGO STRIP */
+.logo-strip{background:#0A2540;border-top:1px solid rgba(255,255,255,.08);padding:16px 32px;display:flex;gap:24px;align-items:center;overflow-x:auto}
+.logo-strip span{color:rgba(255,255,255,.35);font-size:11px;font-weight:600;letter-spacing:.06em;white-space:nowrap}
+.logo-strip span:first-child{color:rgba(255,255,255,.25);font-size:10px;margin-right:4px}
+
+/* STATS */
+.stats{background:#F5F5F0;padding:40px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{background:#fff;border:0.5px solid #E5E5E0;border-radius:10px;padding:20px;text-align:center}
+.stat-num{font-size:26px;font-weight:700;color:#0A2540;margin-bottom:4px}
+.stat-label{font-size:12px;color:#777}
+
+/* SECTIONS */
+.section{padding:56px 32px}
+.section-alt{background:#F5F5F0}
+.section-dark{background:#0A2540}
+.section-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.label-p{color:#4A3A8C}
+.label-t{color:#0D7A5F}
+.label-o{color:#C05A1A}
+.label-n{color:#666}
+.section-heading{font-size:26px;font-weight:700;color:#0A2540;margin-bottom:10px;line-height:1.3}
+.section-heading-light{font-size:26px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3}
+.section-sub{font-size:15px;color:#555;line-height:1.65;margin-bottom:28px;max-width:600px}
+.section-sub-light{font-size:15px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:28px}
+
+/* 3 FORCE CARDS */
+.force-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.force-card{border-radius:10px;padding:20px;border:0.5px solid transparent}
+.force-card-p{background:#EEEDFB;border-color:#C4BEF0}
+.force-card-t{background:#EBF5F0;border-color:#9FD9C5}
+.force-card-o{background:#FDF1E8;border-color:#EAB98A}
+.force-icon{font-size:22px;margin-bottom:10px}
+.force-title{font-size:14px;font-weight:700;margin-bottom:6px;color:#0A2540}
+.force-desc{font-size:12px;color:#666;line-height:1.6;margin-bottom:10px}
+.force-stats{font-size:11px;font-weight:600;color:#888;border-top:1px solid rgba(0,0,0,.08);padding-top:8px;margin-top:4px}
+
+/* VENTURE CARDS */
+.venture-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.venture-card{background:#fff;border:0.5px solid #E5E5E0;border-radius:10px;padding:18px;cursor:pointer;transition:border-color .2s}
+.venture-card:hover{border-color:#0D7A5F}
+.v-tag{display:inline-block;font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;margin-bottom:10px;letter-spacing:.04em}
+.v-tag-p{background:#EEEDFB;color:#4A3A8C}
+.v-tag-t{background:#EBF5F0;color:#0D7A5F}
+.v-tag-o{background:#FDF1E8;color:#C05A1A}
+.v-tag-m{background:#F0F0FB;color:#3A3A7A}
+.v-name{font-size:14px;font-weight:700;color:#0A2540;margin-bottom:4px}
+.v-result{font-size:11px;font-weight:600;color:#0D7A5F;margin-bottom:8px}
+.v-desc{font-size:12px;color:#666;line-height:1.5;margin-bottom:10px}
+.v-link{font-size:12px;color:#0D7A5F;font-weight:600}
+
+/* QUOTE BLOCK */
+.quote-block{background:#0A2540;padding:48px 32px}
+.quote-bar{width:40px;height:3px;background:#0D7A5F;border-radius:2px;margin-bottom:20px}
+.quote-text{font-size:20px;color:#fff;line-height:1.65;font-style:italic;max-width:580px;margin-bottom:24px}
+.quote-attr{font-size:13px;color:rgba(255,255,255,.45)}
+.quote-btn{background:transparent;border:1.5px solid rgba(255,255,255,.3);color:#fff;padding:10px 20px;border-radius:7px;font-size:13px;cursor:pointer;margin-top:8px}
+
+/* STUDIO CTA */
+.studio-cta{background:#FDF1E8;padding:48px 32px;border-left:4px solid #C05A1A}
+.studio-stages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+.stage{background:#fff;border:0.5px solid #EAB98A;border-radius:8px;padding:14px}
+.stage-num{font-size:10px;font-weight:700;color:#C05A1A;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.stage-title{font-size:13px;font-weight:700;color:#0A2540;margin-bottom:4px}
+.stage-desc{font-size:11px;color:#777;line-height:1.5}
+.studio-btn{background:#C05A1A;color:#fff;padding:11px 24px;border-radius:7px;font-size:14px;font-weight:600;border:none;cursor:pointer}
+
+/* BLOG PREVIEW */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.blog-card{background:#fff;border:0.5px solid #E5E5E0;border-radius:10px;overflow:hidden}
+.blog-force-bar{height:3px}
+.bar-p{background:#4A3A8C}
+.bar-t{background:#0D7A5F}
+.bar-o{background:#C05A1A}
+.blog-body{padding:14px}
+.blog-tag{font-size:10px;font-weight:700;color:#888;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.blog-title{font-size:13px;font-weight:700;color:#0A2540;line-height:1.4;margin-bottom:6px}
+.blog-meta{font-size:11px;color:#aaa}
+
+/* NEWSLETTER */
+.newsletter-box{background:#0A2540;padding:40px 32px;text-align:center;border-radius:0}
+.nl-heading{font-size:22px;font-weight:700;color:#fff;margin-bottom:8px}
+.nl-sub{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:20px}
+.nl-form{display:flex;gap:8px;justify-content:center;max-width:440px;margin:0 auto}
+.nl-form input{flex:1;padding:10px 14px;border-radius:7px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;font-size:13px}
+.nl-form input::placeholder{color:rgba(255,255,255,.4)}
+.nl-form button{background:#0D7A5F;color:#fff;padding:10px 18px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+.nl-note{font-size:11px;color:rgba(255,255,255,.3);margin-top:10px}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:24px;right:24px;background:#25D366;color:#fff;border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+
+/* FOOTER */
+.footer{background:#0A2540;padding:32px;border-top:1px solid rgba(255,255,255,.08)}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:16px}
+.footer-links a{color:rgba(255,255,255,.4);font-size:12px;text-decoration:none;cursor:pointer}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{color:rgba(255,255,255,.25);font-size:11px}
+.footer-brand{color:#C05A1A;font-size:11px;font-weight:600}
+
+/* PAGE TABS */
+.page-tabs{display:flex;gap:6px;flex-wrap:wrap;padding:16px;background:#F0F0EC;border-bottom:1px solid #E0E0DC}
+.tab{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:0.5px solid #D0D0CC;background:#fff;color:#555}
+.tab.active{background:#0A2540;color:#fff;border-color:#0A2540}
+.page-section{display:none}
+.page-section.active{display:block}
+</style>
+
+<h2 class="sr-only">Interactive mockup of Tanvir Ahamed's personal website tanvirahamed.com, showing homepage layout, inner pages, and design system across multiple sections</h2>
+
+<div class="page-tabs">
+  <button class="tab active" onclick="showPage('home',this)">Home</button>
+  <button class="tab" onclick="showPage('about',this)">About</button>
+  <button class="tab" onclick="showPage('impact',this)">Impact Portfolio</button>
+  <button class="tab" onclick="showPage('awards',this)">Awards</button>
+  <button class="tab" onclick="showPage('contact',this)">Work With Me</button>
+  <button class="tab" onclick="showPage('design',this)">Design System</button>
+</div>
+
+<div id="home" class="page-section active">
+<div class="site">
+  <nav class="nav">
+    <div class="nav-logo">TANVIR AHAMED</div>
+    <div class="nav-links">
+      <a>About</a><a>Impact</a><a>Writing</a>
+      <a class="nav-cta">Work With Me →</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <div class="hero-name">Tanvir Ahamed · Dhaka, Bangladesh</div>
+      <div class="hero-headline">I build systems that create impact, stories that build authority, and businesses that last.</div>
+      <div class="hero-sub">Social Entrepreneur · Journalist · Founder, ProPact Studio</div>
+      <div class="force-pills">
+        <span class="pill pill-p">🧭 Impact Systems</span>
+        <span class="pill pill-t">📡 Strategic Media</span>
+        <span class="pill pill-o">⚙️ Business Architecture</span>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-primary">Explore My Work</button>
+        <button class="btn-wa">💬 WhatsApp</button>
+      </div>
+    </div>
+    <div class="hero-photo">Professional headshot here<br><br>Plain background<br>Confident expression</div>
+  </div>
+
+  <div class="logo-strip">
+    <span>RECOGNIZED BY</span>
+    <span>JAAGO Foundation</span><span>WaterAid</span><span>Swisscontact</span>
+    <span>BRAC</span><span>World Bank</span><span>UNICEF</span>
+    <span>Alokito Hridoy Foundation</span><span>The Business Standard</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num">2,000+</div><div class="stat-label">Volunteers Led</div></div>
+    <div class="stat"><div class="stat-num">৳800K</div><div class="stat-label">Grant Won</div></div>
+    <div class="stat"><div class="stat-num" style="color:#4A3A8C">3×</div><div class="stat-label">National Awards</div></div>
+    <div class="stat"><div class="stat-num">25,000+</div><div class="stat-label">Students Reached</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label label-n">What makes me different</div>
+    <div class="section-heading">Three forces. One rare intersection.</div>
+    <div class="section-sub">Most professionals master one discipline. I have spent 6 years building verified expertise across three — and they amplify each other.</div>
+    <div class="force-grid">
+      <div class="force-card force-card-p">
+        <div class="force-icon">🧭</div>
+        <div class="force-title">Impact Systems</div>
+        <div class="force-desc">Building community development frameworks at scale. Systems that outlast the person running them.</div>
+        <div class="force-stats">125+ projects · 2,000+ volunteers · 3 awards</div>
+      </div>
+      <div class="force-card force-card-t">
+        <div class="force-icon">📡</div>
+        <div class="force-title">Strategic Media</div>
+        <div class="force-desc">Using film, journalism, and storytelling to make impact visible, credible, and persuasive.</div>
+        <div class="force-stats">Film grad · Published journalist · Comms executive</div>
+      </div>
+      <div class="force-card force-card-o">
+        <div class="force-icon">⚙️</div>
+        <div class="force-title">Business Architecture</div>
+        <div class="force-desc">Designing ventures and systems that generate both revenue and social value simultaneously.</div>
+        <div class="force-stats">1.5M BDT revenue · World Bank accelerator</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-alt">
+    <div class="section-label label-t">What I've built</div>
+    <div class="section-heading">Ventures with real results.</div>
+    <div class="venture-grid">
+      <div class="venture-card">
+        <span class="v-tag v-tag-m">🧭 + ⚙️</span>
+        <div class="v-name">HopeDrop</div>
+        <div class="v-result">🏆 800,000 BDT National Grant</div>
+        <div class="v-desc">Solar-powered clean water for flood-hit coastal Bangladesh.</div>
+        <div class="v-link">View case study →</div>
+      </div>
+      <div class="venture-card">
+        <span class="v-tag v-tag-p">🧭 Impact</span>
+        <div class="v-name">Uddomita</div>
+        <div class="v-result">🏆 BRAC Young Changemaker 2024</div>
+        <div class="v-desc">Economic freedom for women through block-printing.</div>
+        <div class="v-link">View case study →</div>
+      </div>
+      <div class="venture-card">
+        <span class="v-tag v-tag-o">⚙️ Business</span>
+        <div class="v-name">ProPact Studio</div>
+        <div class="v-result">AI-Powered Personal Branding Agency</div>
+        <div class="v-desc">I help professionals build the authority they've earned.</div>
+        <div class="v-link">Visit ProPact Studio →</div>
+      </div>
+      <div class="venture-card">
+        <span class="v-tag v-tag-o">⚙️ Business</span>
+        <div class="v-name">Pro Pact</div>
+        <div class="v-result">1.2–1.5M BDT annual revenue</div>
+        <div class="v-desc">B2B wholesale and e-commerce built from zero.</div>
+        <div class="v-link">Learn more →</div>
+      </div>
+      <div class="venture-card">
+        <span class="v-tag v-tag-p">🧭 Impact</span>
+        <div class="v-name">VBD Network</div>
+        <div class="v-result">🏆 Emerging Leader Award 2026</div>
+        <div class="v-desc">Bangladesh's largest youth volunteer division network.</div>
+        <div class="v-link">Learn more →</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <div class="quote-bar"></div>
+    <div class="quote-text">"I sold vegetables at a village bazaar in Mymensingh at age 10. By 23, I was leading 2,000 volunteers across 4 districts — elected with 100% unanimous support. Everything I know about leadership, I learned in the field."</div>
+    <div class="quote-attr">— Tanvir Ahamed</div>
+    <button class="quote-btn">Read My Full Story →</button>
+  </div>
+
+  <div class="studio-cta">
+    <div class="section-label label-o">ProPact Studio</div>
+    <div class="section-heading" style="color:#0A2540">You've built expertise. Let's make it visible.</div>
+    <div class="section-sub">I help professionals, educators, NGO leaders, and founders build authority online through AI-powered personal branding and digital systems.</div>
+    <div class="studio-stages">
+      <div class="stage">
+        <div class="stage-num">Stage 1</div>
+        <div class="stage-title">Digital Readiness</div>
+        <div class="stage-desc">Brand identity, website, content strategy, lead generation</div>
+      </div>
+      <div class="stage">
+        <div class="stage-num">Stage 2</div>
+        <div class="stage-title">Brand OS</div>
+        <div class="stage-desc">AI content, scheduling, WhatsApp automation, engagement</div>
+      </div>
+      <div class="stage">
+        <div class="stage-num">Stage 3</div>
+        <div class="stage-title">Authority Growth</div>
+        <div class="stage-desc">Thought leadership, video content, expert positioning</div>
+      </div>
+    </div>
+    <button class="studio-btn">Work With ProPact Studio →</button>
+  </div>
+
+  <div class="section">
+    <div class="section-label label-t">From the field</div>
+    <div class="section-heading">Latest writing.</div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-force-bar bar-p"></div>
+        <div class="blog-body">
+          <div class="blog-tag">🧭 Impact Systems</div>
+          <div class="blog-title">How HopeDrop beat 315 teams to win 800,000 BDT</div>
+          <div class="blog-meta">8 min read · June 2026</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-force-bar bar-t"></div>
+        <div class="blog-body">
+          <div class="blog-tag">📡 Strategic Media</div>
+          <div class="blog-title">Why your LinkedIn profile is losing you opportunities</div>
+          <div class="blog-meta">5 min read · June 2026</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-force-bar bar-o"></div>
+        <div class="blog-body">
+          <div class="blog-tag">⚙️ Business Architecture</div>
+          <div class="blog-title">What building a 1.5M BDT business taught me about systems</div>
+          <div class="blog-meta">6 min read · May 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-box">
+    <div class="nl-heading">Join 1,000+ readers.</div>
+    <div class="nl-sub">Weekly insights on social impact, storytelling, and building authority — from the field.</div>
+    <div class="nl-form">
+      <input type="email" placeholder="Your email address">
+      <button>Subscribe →</button>
+    </div>
+    <div class="nl-note">No spam. Unsubscribe anytime.</div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-links">
+      <a>About</a><a>Impact Portfolio</a><a>ProPact Studio</a>
+      <a>Writing</a><a>Awards</a><a>Speaking</a><a>Work With Me</a>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Tanvir Ahamed · tanvirahamed.com</div>
+      <div class="footer-brand">Powered by ProPact Studio</div>
+    </div>
+  </div>
+</div>
+<div class="wa-float" title="Chat on WhatsApp">💬</div>
+</div>
+
+<div id="about" class="page-section">
+<div class="site">
+  <nav class="nav"><div class="nav-logo">TANVIR AHAMED</div><div class="nav-links"><a>About</a><a>Impact</a><a>ProPact Studio</a><a class="nav-cta">Work With Me →</a></div></nav>
+  <div style="background:#0A2540;padding:56px 32px">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-bottom:14px">About</div>
+    <div style="font-size:28px;font-weight:700;color:#fff;max-width:560px;line-height:1.35">From a village in Mymensingh to building systems that matter.</div>
+  </div>
+  <div class="section">
+    <div class="section-label label-n">The origin</div>
+    <div class="section-heading">4 life phases that made me.</div>
+    <div style="margin-top:24px">
+      <div style="display:grid;grid-template-columns:80px 1fr;gap:0;margin-bottom:0">
+        <div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;background:#4A3A8C;border-radius:50%;margin-top:4px"></div><div style="width:2px;flex:1;background:#E5E5E0;margin:4px 0"></div></div>
+        <div style="padding-bottom:28px"><div style="font-size:11px;font-weight:700;color:#4A3A8C;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">2002–2013 · Phase 1</div><div style="font-size:15px;font-weight:700;color:#0A2540;margin-bottom:6px">Rural Foundations & Early Entrepreneurial Sparks</div><div style="font-size:13px;color:#666;line-height:1.6">Born in Dattakonia Village, Mymensingh. Sold vegetables at the local bazaar. Built weighing scales from scratch. Set up festival stalls. The entrepreneurial instinct was always there.</div></div>
+
+        <div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;background:#0D7A5F;border-radius:50%;margin-top:4px"></div><div style="width:2px;flex:1;background:#E5E5E0;margin:4px 0"></div></div>
+        <div style="padding-bottom:28px"><div style="font-size:11px;font-weight:700;color:#0D7A5F;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">2014–2017 · Phase 2</div><div style="font-size:15px;font-weight:700;color:#0A2540;margin-bottom:6px">Social Exploration & First Joint Ventures</div><div style="font-size:13px;color:#666;line-height:1.6">Moved closer to high school. Expanded social circle. First joint ventures with friends at the Boishakhi Mela. First real lessons in partnership and retail management.</div></div>
+
+        <div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;background:#0A2540;border-radius:50%;margin-top:4px"></div><div style="width:2px;flex:1;background:#E5E5E0;margin:4px 0"></div></div>
+        <div style="padding-bottom:28px"><div style="font-size:11px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">2017–2025 · Phase 3</div><div style="font-size:15px;font-weight:700;color:#0A2540;margin-bottom:6px">The Urban Launchpad & Professional Genesis</div><div style="font-size:13px;color:#666;line-height:1.6">Mymensingh city. University. Film & Media Studies. Self-taught digital skills. Formal careers in media, business, and volunteer leadership. This era built the 3 forces.</div></div>
+
+        <div style="display:flex;flex-direction:column;align-items:center"><div style="width:12px;height:12px;background:#C05A1A;border-radius:50%;margin-top:4px"></div><div style="width:2px;flex:1;background:transparent"></div></div>
+        <div style="padding-bottom:0"><div style="font-size:11px;font-weight:700;color:#C05A1A;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">2025–Now · Phase 4</div><div style="font-size:15px;font-weight:700;color:#0A2540;margin-bottom:6px">Executive Leadership & Venture Acceleration</div><div style="font-size:13px;color:#666;line-height:1.6">Dhaka. Full-time corporate executive. Division General Secretary. Founding ProPact Studio. Leading HopeDrop pilot. Pursuing international Master's opportunities.</div></div>
+      </div>
+    </div>
+  </div>
+  <div style="background:#F5F5F0;padding:32px;text-align:center">
+    <div style="font-size:14px;color:#666;margin-bottom:14px">Want the full detailed CV?</div>
+    <button style="background:#0A2540;color:#fff;padding:10px 24px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer">Download Full CV →</button>
+  </div>
+  <div class="footer"><div class="footer-bottom"><div class="footer-copy">© 2026 Tanvir Ahamed</div><div class="footer-brand">Powered by ProPact Studio</div></div></div>
+</div>
+</div>
+
+<div id="impact" class="page-section">
+<div class="site">
+  <nav class="nav"><div class="nav-logo">TANVIR AHAMED</div><div class="nav-links"><a>About</a><a>Impact</a><a>ProPact Studio</a><a class="nav-cta">Work With Me →</a></div></nav>
+  <div style="background:#0A2540;padding:56px 32px">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-bottom:14px">Impact Portfolio</div>
+    <div style="font-size:28px;font-weight:700;color:#fff;max-width:480px;line-height:1.35">Not case studies. Evidence.</div>
+  </div>
+  <div class="section">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px">
+      <button style="padding:6px 16px;border-radius:20px;border:0.5px solid #0A2540;background:#0A2540;color:#fff;font-size:12px;font-weight:600;cursor:pointer">All</button>
+      <button style="padding:6px 16px;border-radius:20px;border:0.5px solid #D0D0CC;background:#fff;color:#666;font-size:12px;cursor:pointer">🧭 Impact Systems</button>
+      <button style="padding:6px 16px;border-radius:20px;border:0.5px solid #D0D0CC;background:#fff;color:#666;font-size:12px;cursor:pointer">📡 Strategic Media</button>
+      <button style="padding:6px 16px;border-radius:20px;border:0.5px solid #D0D0CC;background:#fff;color:#666;font-size:12px;cursor:pointer">⚙️ Business</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
+      <div style="background:#fff;border:0.5px solid #E5E5E0;border-radius:10px;overflow:hidden">
+        <div style="height:4px;background:#4A3A8C"></div>
+        <div style="padding:20px">
+          <span class="v-tag v-tag-m" style="margin-bottom:10px;display:inline-block">🧭 Impact + ⚙️ Business</span>
+          <div style="font-size:16px;font-weight:700;color:#0A2540;margin-bottom:6px">HopeDrop</div>
+          <div style="font-size:12px;color:#0D7A5F;font-weight:600;margin-bottom:10px">🏆 800,000 BDT · National Winner · WaterAid × Swisscontact</div>
+          <div style="font-size:12px;color:#666;line-height:1.6;margin-bottom:12px"><strong>Problem:</strong> Coastal communities lose clean water during floods.<br><strong>Solution:</strong> Mobile solar-powered RO purification system.<br><strong>Result:</strong> National winner from 315 teams. Pilot in Satkhira.</div>
+          <div style="font-size:12px;color:#0D7A5F;font-weight:600">View full case study →</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:0.5px solid #E5E5E0;border-radius:10px;overflow:hidden">
+        <div style="height:4px;background:#4A3A8C"></div>
+        <div style="padding:20px">
+          <span class="v-tag v-tag-p" style="margin-bottom:10px;display:inline-block">🧭 Impact Systems</span>
+          <div style="font-size:16px;font-weight:700;color:#0A2540;margin-bottom:6px">Uddomita</div>
+          <div style="font-size:12px;color:#0D7A5F;font-weight:600;margin-bottom:10px">🏆 BRAC Young Changemaker Award 2024 · 1 of 5 from 315</div>
+          <div style="font-size:12px;color:#666;line-height:1.6;margin-bottom:12px"><strong>Problem:</strong> Women lack economic independence.<br><strong>Solution:</strong> Block-printing skill development & artisan clothing.<br><strong>Result:</strong> National award, media coverage, women employed.</div>
+          <div style="font-size:12px;color:#0D7A5F;font-weight:600">View full case study →</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:0.5px solid #E5E5E0;border-radius:10px;overflow:hidden">
+        <div style="height:4px;background:#0A2540"></div>
+        <div style="padding:20px">
+          <span class="v-tag v-tag-p" style="margin-bottom:10px;display:inline-block">🧭 Impact Systems</span>
+          <div style="font-size:16px;font-weight:700;color:#0A2540;margin-bottom:6px">VBD Mymensingh Division</div>
+          <div style="font-size:12px;color:#0D7A5F;font-weight:600;margin-bottom:10px">🏆 Emerging Leader 2026 · 2,000+ Volunteers · 4 Districts</div>
+          <div style="font-size:12px;color:#666;line-height:1.6;margin-bottom:12px"><strong>Problem:</strong> Youth leadership lacks structure and scale.<br><strong>Solution:</strong> Systematic network across 35 upazilas.<br><strong>Result:</strong> 125+ projects, 1,350+ trained, elected unanimously.</div>
+          <div style="font-size:12px;color:#0D7A5F;font-weight:600">View full case study →</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:0.5px solid #E5E5E0;border-radius:10px;overflow:hidden">
+        <div style="height:4px;background:#C05A1A"></div>
+        <div style="padding:20px">
+          <span class="v-tag v-tag-o" style="margin-bottom:10px;display:inline-block">⚙️ Business Architecture</span>
+          <div style="font-size:16px;font-weight:700;color:#0A2540;margin-bottom:6px">Pro Pact</div>
+          <div style="font-size:12px;color:#0D7A5F;font-weight:600;margin-bottom:10px">🏆 Top 16 Startup · World Bank Accelerator · 1.5M BDT Revenue</div>
+          <div style="font-size:12px;color:#666;line-height:1.6;margin-bottom:12px"><strong>Problem:</strong> Student and household essentials lack quality access.<br><strong>Solution:</strong> B2B wholesale + e-commerce built from zero.<br><strong>Result:</strong> 1.2–1.5M BDT annual revenue. Solo-operated.</div>
+          <div style="font-size:12px;color:#0D7A5F;font-weight:600">View full case study →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><div class="footer-bottom"><div class="footer-copy">© 2026 Tanvir Ahamed</div><div class="footer-brand">Powered by ProPact Studio</div></div></div>
+</div>
+</div>
+
+<div id="studio" class="page-section">
+<div class="site">
+  <nav class="nav"><div class="nav-logo">TANVIR AHAMED</div><div class="nav-links"><a>About</a><a>Impact</a><a style="color:#C05A1A;font-weight:700">ProPact Studio</a><a class="nav-cta">Work With Me →</a></div></nav>
+  <div style="background:#1A0E04;padding:56px 32px">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:#C05A1A;text-transform:uppercase;margin-bottom:14px">ProPact Studio</div>
+    <div style="font-size:28px;font-weight:700;color:#fff;max-width:540px;line-height:1.35;margin-bottom:12px">You've built expertise. Let's make it visible.</div>
+    <div style="font-size:14px;color:rgba(255,255,255,.55);max-width:480px;line-height:1.65;margin-bottom:28px">AI-powered personal branding and digital growth for professionals who have real expertise but limited visibility online.</div>
+    <button style="background:#C05A1A;color:#fff;padding:12px 28px;border-radius:7px;border:none;font-size:14px;font-weight:600;cursor:pointer;margin-right:12px">Book a Discovery Call</button>
+    <button style="background:transparent;color:rgba(255,255,255,.65);padding:12px 28px;border-radius:7px;border:1px solid rgba(255,255,255,.2);font-size:14px;cursor:pointer">See Our Services</button>
+  </div>
+  <div class="section">
+    <div class="section-label label-o">Who we help</div>
+    <div class="section-heading">Real expertise. Zero visibility. We fix that.</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px">
+      <span style="padding:6px 14px;background:#FDF1E8;border:0.5px solid #EAB98A;border-radius:20px;font-size:12px;font-weight:600;color:#C05A1A">Doctors</span>
+      <span style="padding:6px 14px;background:#FDF1E8;border:0.5px solid #EAB98A;border-radius:20px;font-size:12px;font-weight:600;color:#C05A1A">Educators</span>
+      <span style="padding:6px 14px;background:#FDF1E8;border:0.5px solid #EAB98A;border-radius:20px;font-size:12px;font-weight:600;color:#C05A1A">Consultants</span>
+      <span style="padding:6px 14px;background:#FDF1E8;border:0.5px solid #EAB98A;border-radius:20px;font-size:12px;font-weight:600;color:#C05A1A">NGO Leaders</span>
+      <span style="padding:6px 14px;background:#FDF1E8;border:0.5px solid #EAB98A;border-radius:20px;font-size:12px;font-weight:600;color:#C05A1A">Founders</span>
+      <span style="padding:6px 14px;background:#FDF1E8;border:0.5px solid #EAB98A;border-radius:20px;font-size:12px;font-weight:600;color:#C05A1A">Trainers</span>
+    </div>
+    <div class="studio-stages" style="grid-template-columns:repeat(3,1fr)">
+      <div class="stage" style="border-top:3px solid #C05A1A">
+        <div class="stage-num">Stage 1</div>
+        <div class="stage-title">Digital Readiness</div>
+        <div class="stage-desc">Brand identity · website · content strategy · lead generation systems</div>
+      </div>
+      <div class="stage" style="border-top:3px solid #C05A1A">
+        <div class="stage-num">Stage 2</div>
+        <div class="stage-title">Brand OS</div>
+        <div class="stage-desc">AI content creation · scheduling · WhatsApp automation · audience engagement</div>
+      </div>
+      <div class="stage" style="border-top:3px solid #C05A1A">
+        <div class="stage-num">Stage 3</div>
+        <div class="stage-title">Authority Growth</div>
+        <div class="stage-desc">Thought leadership campaigns · video content · expert positioning · speaking</div>
+      </div>
+    </div>
+  </div>
+  <div style="background:#FDF1E8;padding:32px;border-left:4px solid #C05A1A;margin:0 0 0 0">
+    <div style="font-size:13px;font-weight:700;color:#C05A1A;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Why Tanvir</div>
+    <div style="font-size:16px;color:#0A2540;line-height:1.7;max-width:600px">"I didn't learn personal branding in a classroom. I built my own authority from scratch — from rural Bangladesh to 3 national award wins to a 2,000-person network. ProPact Studio is the system I wish I had when I started."</div>
+  </div>
+  <div style="padding:40px 32px;text-align:center">
+    <button style="background:#C05A1A;color:#fff;padding:13px 32px;border-radius:7px;border:none;font-size:15px;font-weight:700;cursor:pointer">Book a Discovery Call →</button>
+    <div style="font-size:13px;color:#888;margin-top:12px">or email tanvirahmedjooy@gmail.com</div>
+  </div>
+  <div class="footer"><div class="footer-bottom"><div class="footer-copy">© 2026 ProPact Studio</div><div class="footer-brand">Built by Tanvir Ahamed</div></div></div>
+</div>
+</div>
+
+<div id="awards" class="page-section">
+<div class="site">
+  <nav class="nav"><div class="nav-logo">TANVIR AHAMED</div><div class="nav-links"><a>About</a><a>Impact</a><a>ProPact Studio</a><a class="nav-cta">Work With Me →</a></div></nav>
+  <div style="background:#0A2540;padding:56px 32px">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-bottom:14px">Awards & Recognition</div>
+    <div style="font-size:28px;font-weight:700;color:#fff;max-width:480px;line-height:1.35">Recognized across all 3 forces.</div>
+  </div>
+  <div class="section">
+    <div style="display:grid;gap:12px">
+      <div style="background:#fff;border:0.5px solid #E5E5E0;border-radius:10px;padding:20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start">
+        <div><div style="font-size:11px;font-weight:700;color:#4A3A8C;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">🧭 Impact Systems</div><div style="font-size:16px;font-weight:700;color:#0A2540;margin-bottom:4px">Emerging Leader Award 2026</div><div style="font-size:13px;color:#666">Volunteer for Bangladesh × JAAGO Foundation · Voted by leaders from all 8 divisions, 64 districts, 495 upazilas of Bangladesh.</div></div>
+        <div style="text-align:center;background:#EEEDFB;border-radius:8px;padding:12px 16px;min-width:60px"><div style="font-size:18px;font-weight:700;color:#4A3A8C">2026</div></div>
+      </div>
+      <div style="background:#fff;border:0.5px solid #E5E5E0;border-radius:10px;padding:20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start">
+        <div><div style="font-size:11px;font-weight:700;color:#C05A1A;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">🔀 All 3 Forces</div><div style="font-size:16px;font-weight:700;color:#0A2540;margin-bottom:4px">National Winner — BLUE Business Idea Competition</div><div style="font-size:13px;color:#666">WaterAid Bangladesh × Swisscontact Bangladesh (GO4IMPact) · 800,000 BDT grant · Selected from 315 national teams.</div></div>
+        <div style="text-align:center;background:#FDF1E8;border-radius:8px;padding:12px 16px;min-width:60px"><div style="font-size:18px;font-weight:700;color:#C05A1A">2025</div></div>
+      </div>
+      <div style="background:#fff;border:0.5px solid #E5E5E0;border-radius:10px;padding:20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start">
+        <div><div style="font-size:11px;font-weight:700;color:#4A3A8C;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">🧭 Impact Systems</div><div style="font-size:16px;font-weight:700;color:#0A2540;margin-bottom:4px">Amra Notun Young Changemaker Award 2024</div><div style="font-size:13px;color:#666">BRAC Youth Platform · 1 of 5 selected nationally from 315 nominees for Uddomita.</div></div>
+        <div style="text-align:center;background:#EEEDFB;border-radius:8px;padding:12px 16px;min-width:60px"><div style="font-size:18px;font-weight:700;color:#4A3A8C">2024</div></div>
+      </div>
+      <div style="background:#fff;border:0.5px solid #E5E5E0;border-radius:10px;padding:20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start">
+        <div><div style="font-size:11px;font-weight:700;color:#0D7A5F;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">📡 Strategic Media + ⚙️ Business</div><div style="font-size:16px;font-weight:700;color:#0A2540;margin-bottom:4px">360° Best Performer Award</div><div style="font-size:13px;color:#666">Alokito Hridoy Foundation · Company-wide peer and executive evaluation.</div></div>
+        <div style="text-align:center;background:#EBF5F0;border-radius:8px;padding:12px 16px;min-width:60px"><div style="font-size:18px;font-weight:700;color:#0D7A5F">2025</div></div>
+      </div>
+      <div style="background:#fff;border:0.5px solid #E5E5E0;border-radius:10px;padding:20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start">
+        <div><div style="font-size:11px;font-weight:700;color:#C05A1A;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">⚙️ Business Architecture</div><div style="font-size:16px;font-weight:700;color:#0A2540;margin-bottom:4px">Top 16 Startup — Accelerating Bangladesh</div><div style="font-size:13px;color:#666">World Bank, BHTPA, ICT Division, DEIED · Graduated full 2026 cohort.</div></div>
+        <div style="text-align:center;background:#FDF1E8;border-radius:8px;padding:12px 16px;min-width:60px"><div style="font-size:18px;font-weight:700;color:#C05A1A">2026</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><div class="footer-bottom"><div class="footer-copy">© 2026 Tanvir Ahamed</div><div class="footer-brand">Powered by ProPact Studio</div></div></div>
+</div>
+</div>
+
+<div id="contact" class="page-section">
+<div class="site">
+  <nav class="nav"><div class="nav-logo">TANVIR AHAMED</div><div class="nav-links"><a>About</a><a>Impact</a><a>ProPact Studio</a><a class="nav-cta">Work With Me →</a></div></nav>
+  <div style="background:#0A2540;padding:56px 32px">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-bottom:14px">Work With Me</div>
+    <div style="font-size:28px;font-weight:700;color:#fff;line-height:1.35">Let's build something.</div>
+  </div>
+  <div class="section">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px">
+      <div style="background:#EEEDFB;border-radius:10px;padding:22px;border-top:4px solid #4A3A8C">
+        <div style="font-size:22px;margin-bottom:10px">🧭</div>
+        <div style="font-size:14px;font-weight:700;color:#4A3A8C;margin-bottom:8px">Impact & Advisory</div>
+        <div style="font-size:12px;color:#555;line-height:1.6;margin-bottom:14px">Impact consulting · fellowship advisory · community strategy · development partnerships</div>
+        <button style="background:#4A3A8C;color:#fff;padding:8px 16px;border-radius:6px;border:none;font-size:12px;font-weight:600;cursor:pointer;width:100%">Send an Email →</button>
+      </div>
+      <div style="background:#EBF5F0;border-radius:10px;padding:22px;border-top:4px solid #0D7A5F">
+        <div style="font-size:22px;margin-bottom:10px">📡</div>
+        <div style="font-size:14px;font-weight:700;color:#0D7A5F;margin-bottom:8px">Media & Speaking</div>
+        <div style="font-size:12px;color:#555;line-height:1.6;margin-bottom:14px">Keynote speaking · media interviews · journalism · content collaborations</div>
+        <button style="background:#0D7A5F;color:#fff;padding:8px 16px;border-radius:6px;border:none;font-size:12px;font-weight:600;cursor:pointer;width:100%">Book a Speaking Slot →</button>
+      </div>
+      <div style="background:#FDF1E8;border-radius:10px;padding:22px;border-top:4px solid #C05A1A">
+        <div style="font-size:22px;margin-bottom:10px">⚙️</div>
+        <div style="font-size:14px;font-weight:700;color:#C05A1A;margin-bottom:8px">ProPact Studio</div>
+        <div style="font-size:12px;color:#555;line-height:1.6;margin-bottom:14px">Personal branding · website · Brand OS · Authority Growth campaigns</div>
+        <button style="background:#C05A1A;color:#fff;padding:8px 16px;border-radius:6px;border:none;font-size:12px;font-weight:600;cursor:pointer;width:100%">Book a Discovery Call →</button>
+      </div>
+    </div>
+    <div style="background:#F5F5F0;border-radius:10px;padding:24px">
+      <div style="font-size:15px;font-weight:700;color:#0A2540;margin-bottom:16px">Direct contact</div>
+      <div style="display:grid;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><div style="width:36px;height:36px;background:#EBF5F0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">📩</div><div><div style="font-size:13px;font-weight:600;color:#0A2540">tanvirahmedjooy@gmail.com</div><div style="font-size:11px;color:#888">Email — best for detailed requests</div></div></div>
+        <div style="display:flex;align-items:center;gap:10px"><div style="width:36px;height:36px;background:#E8F9EE;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">💬</div><div><div style="font-size:13px;font-weight:600;color:#0A2540">+8801987890755</div><div style="font-size:11px;color:#888">WhatsApp — fastest response</div></div></div>
+        <div style="display:flex;align-items:center;gap:10px"><div style="width:36px;height:36px;background:#E6F1FB;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">🔗</div><div><div style="font-size:13px;font-weight:600;color:#0A2540">linkedin.com/in/tanvirahamedjooy</div><div style="font-size:11px;color:#888">LinkedIn — for professional networking</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><div class="footer-bottom"><div class="footer-copy">© 2026 Tanvir Ahamed</div><div class="footer-brand">Powered by ProPact Studio</div></div></div>
+</div>
+</div>
+
+<div id="design" class="page-section">
+<div style="padding:24px">
+  <div style="font-size:18px;font-weight:700;color:var(--color-text-primary);margin-bottom:6px">Design System — tanvirahamed.com</div>
+  <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:24px">Colors, typography, and components that power the brand.</div>
+
+  <div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Color palette</div>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:24px">
+    <div><div style="height:56px;background:#0A2540;border-radius:8px;margin-bottom:6px"></div><div style="font-size:11px;font-weight:600;color:var(--color-text-primary)">Midnight Navy</div><div style="font-size:10px;color:var(--color-text-secondary);font-family:monospace">#0A2540</div><div style="font-size:10px;color:var(--color-text-tertiary)">Primary brand</div></div>
+    <div><div style="height:56px;background:#0D7A5F;border-radius:8px;margin-bottom:6px"></div><div style="font-size:11px;font-weight:600;color:var(--color-text-primary)">Forest Teal</div><div style="font-size:10px;color:var(--color-text-secondary);font-family:monospace">#0D7A5F</div><div style="font-size:10px;color:var(--color-text-tertiary)">📡 Media</div></div>
+    <div><div style="height:56px;background:#4A3A8C;border-radius:8px;margin-bottom:6px"></div><div style="font-size:11px;font-weight:600;color:var(--color-text-primary)">Deep Purple</div><div style="font-size:10px;color:var(--color-text-secondary);font-family:monospace">#4A3A8C</div><div style="font-size:10px;color:var(--color-text-tertiary)">🧭 Impact</div></div>
+    <div><div style="height:56px;background:#C05A1A;border-radius:8px;margin-bottom:6px"></div><div style="font-size:11px;font-weight:600;color:var(--color-text-primary)">Warm Orange</div><div style="font-size:10px;color:var(--color-text-secondary);font-family:monospace">#C05A1A</div><div style="font-size:10px;color:var(--color-text-tertiary)">⚙️ Business</div></div>
+    <div><div style="height:56px;background:#F5F5F0;border:0.5px solid #E0E0DC;border-radius:8px;margin-bottom:6px"></div><div style="font-size:11px;font-weight:600;color:var(--color-text-primary)">Off White</div><div style="font-size:10px;color:var(--color-text-secondary);font-family:monospace">#F5F5F0</div><div style="font-size:10px;color:var(--color-text-tertiary)">Page bg</div></div>
+    <div><div style="height:56px;background:#111111;border-radius:8px;margin-bottom:6px"></div><div style="font-size:11px;font-weight:600;color:var(--color-text-primary)">Near Black</div><div style="font-size:10px;color:var(--color-text-secondary);font-family:monospace">#111111</div><div style="font-size:10px;color:var(--color-text-tertiary)">Body text</div></div>
+  </div>
+
+  <div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Typography</div>
+  <div style="background:var(--color-background-secondary);border-radius:10px;padding:20px;margin-bottom:24px">
+    <div style="font-size:32px;font-weight:700;color:var(--color-text-primary);line-height:1.2;margin-bottom:8px">Plus Jakarta Sans</div>
+    <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:16px">Display & headings — Bold & Semi-bold — 28–72px</div>
+    <div style="font-size:16px;color:var(--color-text-primary);line-height:1.7;margin-bottom:8px;font-family:serif">Inter — Body text — Regular 400 — 16–18px — line-height 1.7</div>
+    <div style="font-size:13px;font-family:monospace;color:var(--color-text-secondary)">JetBrains Mono — credentials, URLs, data — 13px</div>
+  </div>
+
+  <div style="font-size:12px;font-weight:700;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Components</div>
+  <div style="display:grid;gap:12px">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+      <button style="background:#0A2540;color:#fff;padding:10px 20px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer">Primary Button</button>
+      <button style="background:transparent;color:#0A2540;padding:10px 20px;border-radius:7px;border:1.5px solid #0A2540;font-size:13px;font-weight:600;cursor:pointer">Secondary Button</button>
+      <button style="background:#C05A1A;color:#fff;padding:10px 20px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer">Studio CTA</button>
+      <button style="background:#25D366;color:#fff;padding:10px 20px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer">💬 WhatsApp</button>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <span style="padding:5px 12px;background:#EEEDFB;border:1px solid #C4BEF0;border-radius:20px;font-size:12px;font-weight:600;color:#4A3A8C">🧭 Impact Systems</span>
+      <span style="padding:5px 12px;background:#EBF5F0;border:1px solid #9FD9C5;border-radius:20px;font-size:12px;font-weight:600;color:#0D7A5F">📡 Strategic Media</span>
+      <span style="padding:5px 12px;background:#FDF1E8;border:1px solid #EAB98A;border-radius:20px;font-size:12px;font-weight:600;color:#C05A1A">⚙️ Business Architecture</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+function showPage(id,btn){
+  document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
